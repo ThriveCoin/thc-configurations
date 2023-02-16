@@ -1,0 +1,13 @@
+[
+  {
+    "name": "Follow x on twitter",
+    "scenario_id": "524385",
+    "network": "twitter",
+    "variables": [
+      {
+        "name": "handle",
+        "type": "text"
+      }
+    ]
+  }
+]

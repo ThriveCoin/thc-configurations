@@ -1,0 +1,45 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "title": "ListingTemplate",
+  "description": "A template for creating listings",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "The name of the template"
+    },
+    "scenario_id": {
+      "type": "string",
+      "description": "The make scenario id"
+    },
+    "network": {
+      "type": "string",
+      "enum": ["address", "twitter", "discord"],
+      "description": "The make scenario id"
+    },
+    "variables": {
+      "type": "array",
+      "description": "An array of configurable variables for the scenario",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "The name of the variable"
+          },
+          "type": {
+            "type": "string",
+            "enum": ["text", "number", "select"],
+            "description": "What type of value should we provide"
+          },
+          "required": {
+            "type": "boolean",
+            "description": "Is the variable required"
+          }
+        },
+        "required": ["name", "type"]
+      }
+    }
+  },
+  "required": ["name", "scenario_id", "network"]
+}
